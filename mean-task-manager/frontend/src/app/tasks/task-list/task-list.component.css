@@ -1,0 +1,39 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  margin-top: 2%;
+}
+
+.taskList {
+    display: flex;
+    flex-direction: column;
+    
+
+}
+
+/* .taskList a {
+  margin-top: 3% !important;
+  margin-bottom: 3% !important;
+} */
+
+th,
+td {
+  text-align: left;
+  padding: 20px;
+}
+th {
+  background-color: gainsboro;
+
+}
+td {
+  border-bottom: 2px solid gainsboro;
+}
+button {
+  margin: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #ddd;
+}

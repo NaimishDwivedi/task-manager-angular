@@ -1,0 +1,56 @@
+<div class="taskList">
+  <a
+    class="mt-4 ml-[20px] mb-3 w-max bg-transparent hover:bg-blue-500 text-blue-700 hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+    [routerLink]="['/createTask', user.id]"
+    >Create Task</a
+  >
+  <!-- <button (click)="getTasks()">Show Tasks</button> -->
+
+  <!-- <ul *ngFor="let task of tasks">
+
+    <li>{{task.title}}</li>
+    <li>{{task.description}}</li>
+
+</ul> -->
+
+  <table border="1" cellpadding="10">
+    <thead>
+      <tr>
+        <th>Sr. No.</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let task of tasks; let i = index">
+      <!-- Row 1 -->
+      <tr>
+        <td>{{ i + 1 }}</td>
+        <td>{{ task.title }}</td>
+        <td>
+          {{ task.description }}
+        </td>
+        <td>
+          <a
+            class="bg-transparent hover:bg-green-700 text-green-700 hover:text-white py-2 px-4 border border-green-700 hover:border-transparent rounded"
+            [routerLink]="['/edit', user.id, task._id]"
+            >Edit</a
+          >
+          <a
+            class="ml-4 bg-transparent hover:bg-red-700 text-red-700 hover:text-white py-2 px-4 border border-red-700 hover:border-transparent rounded"
+            (click)="deleteTask(task._id)"
+            >Delete</a
+          >
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+<router-outlet></router-outlet>
